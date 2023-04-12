@@ -30,17 +30,18 @@ public:
 };
 
 int main() {
+    setlocale(LC_ALL, "Russian");
     std::vector<Category> categories;
     std::vector<Brand> brands;
     std::vector<Seller> sellers;
     std::vector<Product> products;
 
  
-    Category category1{ 1, "Electronics" };
-    Category category2{ 2, "Clothing" };
-    Category category3{ 3, "Home & Garden" };
-    Category category4{ 4, "Sports & Outdoors" };
-    Category category5{ 5, "Beauty & Personal Care" };
+    Category category1{ 1, "электроника " };
+    Category category2{ 2, "одежда" };
+    Category category3{ 3, "дом и сад" };
+    Category category4{ 4, "спорт" };
+    Category category5{ 5, "уход за собой" };
 
     categories.push_back(category1);
     categories.push_back(category2);
@@ -72,11 +73,11 @@ int main() {
     sellers.push_back(seller4);
     sellers.push_back(seller5);
 
-    Product product1{ 1, seller1, brand1, category4, "Running Shoes" };
+    Product product1{ 1, seller1, brand1, category4, "беговая обувь" };
     Product product2{ 2, seller2, brand2, category1, "iPhone" };
-    Product product3{ 3, seller3, brand3, category3, "Refrigerator" };
-    Product product4{ 4, seller4, brand4, category2, "T-Shirt" };
-    Product product5{ 5, seller5, brand5, category5, "Shampoo" };
+    Product product3{ 3, seller3, brand3, category3, "холодильник" };
+    Product product4{ 4, seller4, brand4, category2, "майка" };
+    Product product5{ 5, seller5, brand5, category5, "шампунь" };
 
     products.push_back(product1);
     products.push_back(product2);
@@ -85,7 +86,7 @@ int main() {
     products.push_back(product5);
 
 
-    std::cout << "ID\tNAME\tSELLER\tBRAND\tCATEGORY" << std::endl;
+    std::cout << "ID\tИмя\tПродавец\tБренд\tКатегория" << std::endl;
     for (auto category : categories) {
         std::cout << "Category: " << category.name << std::endl;
         for (auto product : products) {
