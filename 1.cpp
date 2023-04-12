@@ -88,7 +88,7 @@ int main() {
 
     std::cout << "ID\tИмя\tПродавец\tБренд\tКатегория" << std::endl;
     for (auto category : categories) {
-        std::cout << "Category: " << category.name << std::endl;
+        std::cout << "Категория: " << category.name << std::endl;
         for (auto product : products) {
             if (product.category.id == category.id) {
                 std::cout << product.id << "\t" << product.name << "\t" << product.seller.name << "\t" << product.brand.name << "\t" << product.category.name << std::endl;
