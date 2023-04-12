@@ -29,6 +29,17 @@ public:
     std::string name;
 };
 
+std::string convert(std::string res) {
+    int size = res.size();
+
+    if (size < 20) {
+        for (; res.size() < 20;) {
+            res += ' ';
+        }
+    }
+    return res;
+}
+
 int main() {
     setlocale(LC_ALL, "Russian");
     std::vector<Category> categories;
@@ -36,7 +47,7 @@ int main() {
     std::vector<Seller> sellers;
     std::vector<Product> products;
 
- 
+
     Category category1{ 1, "электроника " };
     Category category2{ 2, "одежда" };
     Category category3{ 3, "дом и сад" };
@@ -86,12 +97,13 @@ int main() {
     products.push_back(product5);
 
 
-    std::cout << "ID\tИмя\tПродавец\tБренд\tКатегория" << std::endl;
+    std::cout << convert("id")<< convert("Имя")<< convert("Продавец")<< convert("Бренд")<< convert("Категория") << "\n";
     for (auto category : categories) {
         std::cout << "Категория: " << category.name << std::endl;
         for (auto product : products) {
             if (product.category.id == category.id) {
-                std::cout << product.id << "\t" << product.name << "\t" << product.seller.name << "\t" << product.brand.name << "\t" << product.category.name << std::endl;
+                std::cout << convert(std::to_string( product.id)) << convert( product.name)<<convert( product.seller.name)<<convert(product.brand.name)
+                    << convert(product.category.name) << '\n';
             }
         }
     }
